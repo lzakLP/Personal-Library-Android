@@ -1,3 +1,11 @@
+<p align="center">
+  <img
+    src="https://i.pinimg.com/736x/85/21/49/852149a7474d13fd6d363575d58fecee.jpg"
+    width="680"
+  />
+</p>
+
+
 # Personal Library 
 
 An Android application built with Java and XML to organize your reading history, rate books, bookmark pages, and save personal notes.
