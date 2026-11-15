@@ -34,6 +34,7 @@
     <string name="your_rating">Your rating</string>
     <string name="personal_notes">Personal notes (optional)</string>
     <string name="isbn_not_informed">ISBN not provided</string>
+    <string name="isbn_format">ISBN: %1$s</string>
     <string name="no_notes">No notes added.</string>
     <string name="notes_heading">NOTES</string>
     <string name="rating_format">★  %1$d / 5</string>
