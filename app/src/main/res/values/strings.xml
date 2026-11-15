@@ -34,6 +34,7 @@
     <string name="your_rating">Sua avaliação</string>
     <string name="personal_notes">Anotações pessoais (opcional)</string>
     <string name="isbn_not_informed">ISBN não informado</string>
+    <string name="isbn_format">ISBN: %1$s</string>
     <string name="no_notes">Nenhuma anotação adicionada.</string>
     <string name="notes_heading">ANOTAÇÕES</string>
     <string name="rating_format">★  %1$d / 5</string>
