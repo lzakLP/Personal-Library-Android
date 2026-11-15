@@ -1,29 +1,29 @@
 # Personal Library
 
-A personal reading journal for Android, built with Java and XML.
-
-The app is designed for individual use and works offline. It does not require an account, a server connection, or a database.
+A minimal personal reading journal for Android, built with Java and XML. The interface is available in Portuguese and English and follows the device language.
 
 ## Features
 
-- Add books with a title, author, personal rating, and notes.
-- Browse the books saved in your library.
-- Search by book title or author.
-- Remove books from the library.
-- Persist entries locally in a JSON file.
-- Keep the app usable without an internet connection.
+- Add, edit, view and remove books.
+- Save title, author, ISBN, personal rating and notes.
+- Search by title, author or ISBN.
+- Look up real book covers through the Google Books API, using ISBN when provided and title/author as a fallback.
+- Keep book records in private local JSON storage.
+- Browse saved records offline; cover lookup requires an internet connection and is optional.
 
 ## Technology
 
 | Technology | Purpose |
 | --- | --- |
-| Java | Application logic and data models |
-| XML | Android layouts and resources |
-| Android SDK | Native Android functionality |
+| Java 17 | Application logic and data model |
+| XML | Android layouts and localized resources |
+| Android SDK 36 | Native Android functionality |
+| Google Books API | Optional book metadata and cover lookup |
+| Picasso | Remote cover image loading and caching |
 | JSON | Local file-based persistence |
 | Gradle | Build configuration |
 
-The app uses AndroidX and Material Components for Android. It does not use SQLite, Room, Firebase, or a remote backend.
+The app has no account, server-side user database, or cloud synchronization. Book records remain local to the device.
 
 ## Project structure
 
@@ -40,7 +40,8 @@ Personal-Library-Android/
 │       ├── res/
 │       │   ├── layout/
 │       │   ├── drawable/
-│       │   └── values/
+│       │   ├── values/
+│       │   └── values-en/
 │       └── AndroidManifest.xml
 ├── build.gradle
 ├── settings.gradle
@@ -52,45 +53,39 @@ Personal-Library-Android/
 - Android Studio with support for Android Gradle Plugin 8.13.2.
 - JDK 17.
 - Android SDK 36.
-- An Android emulator or a physical Android device (minimum Android 6.0 / API 23).
+- An Android emulator or physical device running Android 6.0 / API 23 or later.
 
-## Run the app
+## Run
 
 1. Clone the repository.
-2. Open the repository root directory in Android Studio.
-3. Allow Android Studio to sync the Gradle project and download the required dependencies.
-4. Install Android SDK 36 if Android Studio requests it.
-5. Start an emulator or connect an Android device with USB debugging enabled.
-6. Select the `app` run configuration and click **Run**.
+2. Check out the `feature/android-app-foundation` branch.
+3. Open the repository root in Android Studio.
+4. Allow Gradle to sync and download dependencies.
+5. Install Android SDK 36 if requested.
+6. Start an emulator or connect a device with USB debugging enabled.
+7. Select the `app` run configuration and click **Run**.
 
-To build a debug APK from Android Studio, select **Build > Build Bundle(s) / APK(s) > Build APK(s)**.
+A Gradle Wrapper has not been added yet. Use Android Studio's Gradle integration until the wrapper is configured.
 
-## Local storage
+## Storage and network behavior
 
-Book entries are stored in the app's private internal storage in a file named `personal_library.json`.
+Book data is stored in the app's private internal storage in `personal_library.json`. Data survives normal app restarts, but clearing app data or uninstalling the app removes it.
 
-The file is managed by Android and is not directly exposed to other apps. Data remains available between app launches, but clearing app data or uninstalling the app removes the library.
+The Google Books lookup is an optional network feature. It runs after a book is saved; failure to retrieve a cover does not prevent the book from being stored. Existing book information remains available offline. Cover images are loaded from their saved image URLs when a connection is available.
 
-There is no cloud synchronization. Export and backup are not implemented yet.
+## Roadmap
 
-## Development roadmap
-
-- [x] Set up the Android project with Java and XML.
-- [x] Create the book data model.
-- [x] Implement book creation and listing.
-- [x] Add search by title and author.
-- [x] Implement deletion.
-- [x] Persist books using local JSON storage.
-- [ ] Add a dedicated book details screen.
-- [ ] Implement editing of existing books.
-- [ ] Improve filters and reading status.
-- [ ] Add bookmarks for pages and passages.
-- [ ] Add automated tests for storage and book management.
-- [ ] Add screenshots and a demo GIF.
-- [ ] Implement export and backup.
+- [x] Java/XML Android project foundation.
+- [x] Local JSON persistence.
+- [x] Create, list, search and delete books.
+- [x] Portuguese and English resources.
+- [x] ISBN field and optional Google Books cover lookup.
+- [x] Book details and editing.
+- [ ] Reading status and genre filters.
+- [ ] Bookmarks, quotes and reading history.
+- [ ] Automated tests and backup/export.
+- [ ] Screenshots and demo GIF.
 
 ## Scope
 
-The initial version focuses on recording and browsing a personal reading list.
-
-Social networking, public profiles, book lending, external book catalogs, and cloud synchronization are outside the initial scope.
+The initial release focuses on an individual, offline-first reading library. Social features, public profiles, lending workflows and cloud synchronization are out of scope.
