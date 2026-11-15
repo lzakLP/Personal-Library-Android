@@ -17,7 +17,7 @@
             android:id="@+id/inputBookTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Book title *"
+            android:hint="@string/book_title_required"
             android:inputType="textCapSentences"
             android:maxLines="1" />
 
@@ -25,15 +25,23 @@
             android:id="@+id/inputBookAuthor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Author"
+            android:hint="@string/book_author"
             android:inputType="textCapWords"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/inputBookIsbn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/book_isbn"
+            android:inputType="text"
             android:maxLines="1" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
-            android:text="Your rating"
+            android:text="@string/your_rating"
             android:textColor="@color/library_text"
             android:textSize="13sp" />
 
@@ -52,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="top"
-            android:hint="Personal notes (optional)"
+            android:hint="@string/personal_notes"
             android:inputType="textCapSentences|textMultiLine"
             android:minLines="3" />
     </LinearLayout>
