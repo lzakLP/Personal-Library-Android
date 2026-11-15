@@ -16,12 +16,15 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="16dp">
+        android:padding="12dp">
 
-        <View
-            android:layout_width="4dp"
-            android:layout_height="54dp"
-            android:background="@color/library_primary" />
+        <ImageView
+            android:id="@+id/bookCover"
+            android:layout_width="58dp"
+            android:layout_height="82dp"
+            android:contentDescription="@string/book_cover"
+            android:scaleType="centerCrop"
+            android:src="@drawable/book_cover_placeholder" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -35,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
-                android:maxLines="1"
+                android:maxLines="2"
                 android:textColor="@color/library_text"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -65,7 +68,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Delete book"
+            android:contentDescription="@string/delete_book"
             android:src="@android:drawable/ic_menu_delete"
             android:tint="@color/library_muted" />
     </LinearLayout>
