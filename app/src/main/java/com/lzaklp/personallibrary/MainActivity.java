@@ -201,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
         TextView notes = content.findViewById(R.id.detailBookNotes);
         title.setText(book.getTitle());
         author.setText(book.getAuthor().isEmpty() ? getString(R.string.author_not_informed) : book.getAuthor());
-        isbn.setText(book.getIsbn().isEmpty() ? getString(R.string.isbn_not_informed) : "ISBN: " + book.getIsbn());
+        isbn.setText(book.getIsbn().isEmpty() ? getString(R.string.isbn_not_informed) : getString(R.string.isbn_format, book.getIsbn()));
         rating.setText(book.getRating() == 0 ? getString(R.string.not_rated)
                 : getString(R.string.rating_format, book.getRating()));
         notes.setText(book.getNotes().isEmpty() ? getString(R.string.no_notes) : book.getNotes());
