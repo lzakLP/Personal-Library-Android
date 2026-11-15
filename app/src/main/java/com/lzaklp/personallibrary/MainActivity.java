@@ -108,8 +108,12 @@ public class MainActivity extends AppCompatActivity {
                         return;
                     }
 
+                    String currentCover = existing == null ? "" : existing.getCoverUrl();
+                    if (existing != null && (!existing.getTitle().equalsIgnoreCase(title)
+                            || !existing.getAuthor().equalsIgnoreCase(author)
+                            || !existing.getIsbn().equals(isbn))) currentCover = "";
                     Book updated = new Book(title, author, Math.round(ratingInput.getRating()),
-                            notes, isbn, existing == null ? "" : existing.getCoverUrl());
+                            notes, isbn, currentCover);
                     int oldIndex = existing == null ? -1 : indexOfBook(existing.getId());
                     Book savedBook = oldIndex >= 0 ? updatedWithId(existing, updated) : updated;
                     if (oldIndex >= 0) allBooks.set(oldIndex, savedBook);
