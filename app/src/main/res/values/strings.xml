@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Biblioteca Pessoal</string>
+    <string name="brand_label">BIBLIOTECA PESSOAL</string>
+    <string name="library_title">Minha biblioteca</string>
+    <string name="library_subtitle">Sua vida de leitura em um só lugar.</string>
+    <string name="library_card_caption">Histórias e ideias reunidas</string>
+    <string name="book_label">LIVRO</string>
+    <string name="recently_added">ADICIONADOS RECENTEMENTE</string>
+    <string name="empty_state_title">Nenhum livro ainda</string>
+    <string name="search_hint">Buscar por título, autor ou ISBN</string>
+    <string name="empty_library_title">Sua biblioteca está esperando</string>
+    <string name="empty_library_message">Adicione seu primeiro livro para começar seu diário de leitura.</string>
+    <string name="add_book">Adicionar livro</string>
+    <string name="add_book_title">Adicionar livro</string>
+    <string name="edit_book_title">Editar livro</string>
+    <string name="cancel">Cancelar</string>
+    <string name="save_book">Salvar livro</string>
+    <string name="save_changes">Salvar alterações</string>
+    <string name="title_required">Informe o título do livro</string>
+    <string name="save_error">Não foi possível salvar o livro.</string>
+    <string name="author_not_informed">Autor não informado</string>
+    <string name="not_rated">SEM AVALIAÇÃO</string>
+    <string name="no_books_found">Nenhum livro encontrado</string>
+    <string name="remove_book">Remover livro?</string>
+    <string name="remove_book_message">“%1$s” será removido da sua biblioteca.</string>
+    <string name="remove">Remover</string>
+    <string name="close">Fechar</string>
+    <string name="edit">Editar</string>
+    <string name="book_cover">Capa do livro</string>
+    <string name="delete_book">Excluir livro</string>
+    <string name="book_title_required">Título do livro *</string>
+    <string name="book_author">Autor</string>
+    <string name="book_isbn">ISBN (opcional, ajuda a encontrar a capa)</string>
+    <string name="your_rating">Sua avaliação</string>
+    <string name="personal_notes">Anotações pessoais (opcional)</string>
+    <string name="isbn_not_informed">ISBN não informado</string>
+    <string name="isbn_format">ISBN: %1$s</string>
+    <string name="no_notes">Nenhuma anotação adicionada.</string>
+    <string name="notes_heading">ANOTAÇÕES</string>
+    <string name="rating_format">★  %1$d / 5</string>
+    <plurals name="book_count">
+        <item quantity="one">%1$d livro</item>
+        <item quantity="other">%1$d livros</item>
+    </plurals>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <style name="Theme.PersonalLibrary" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/library_primary</item>
+        <item name="colorOnPrimary">@color/library_on_primary</item>
+        <item name="android:colorAccent">@color/library_primary</item>
+        <item name="android:statusBarColor">@color/library_background</item>
+        <item name="android:navigationBarColor">@color/library_background</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@color/library_background</item>
+    </style>
+</resources>

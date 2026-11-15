@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Personal Library</string>
+    <string name="brand_label">PERSONAL LIBRARY</string>
+    <string name="library_title">My library</string>
+    <string name="library_subtitle">Your reading life, in one place.</string>
+    <string name="library_card_caption">Collected stories and ideas</string>
+    <string name="book_label">BOOK</string>
+    <string name="recently_added">RECENTLY ADDED</string>
+    <string name="empty_state_title">No books yet</string>
+    <string name="search_hint">Search by title, author or ISBN</string>
+    <string name="empty_library_title">Your library is waiting</string>
+    <string name="empty_library_message">Add your first book to start building your reading journal.</string>
+    <string name="add_book">Add book</string>
+    <string name="add_book_title">Add a book</string>
+    <string name="edit_book_title">Edit book</string>
+    <string name="cancel">Cancel</string>
+    <string name="save_book">Save book</string>
+    <string name="save_changes">Save changes</string>
+    <string name="title_required">Enter a book title</string>
+    <string name="save_error">Could not save the book.</string>
+    <string name="author_not_informed">Author not provided</string>
+    <string name="not_rated">NOT RATED</string>
+    <string name="no_books_found">No books found</string>
+    <string name="remove_book">Remove book?</string>
+    <string name="remove_book_message">“%1$s” will be removed from your library.</string>
+    <string name="remove">Remove</string>
+    <string name="close">Close</string>
+    <string name="edit">Edit</string>
+    <string name="book_cover">Book cover</string>
+    <string name="delete_book">Delete book</string>
+    <string name="book_title_required">Book title *</string>
+    <string name="book_author">Author</string>
+    <string name="book_isbn">ISBN (optional, helps find the cover)</string>
+    <string name="your_rating">Your rating</string>
+    <string name="personal_notes">Personal notes (optional)</string>
+    <string name="isbn_not_informed">ISBN not provided</string>
+    <string name="isbn_format">ISBN: %1$s</string>
+    <string name="no_notes">No notes added.</string>
+    <string name="notes_heading">NOTES</string>
+    <string name="rating_format">★  %1$d / 5</string>
+    <plurals name="book_count">
+        <item quantity="one">%1$d book</item>
+        <item quantity="other">%1$d books</item>
+    </plurals>
+</resources>

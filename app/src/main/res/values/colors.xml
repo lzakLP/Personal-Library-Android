@@ -1,0 +1,10 @@
+<resources>
+    <color name="library_primary">#315C50</color>
+    <color name="library_on_primary">#FFFFFF</color>
+    <color name="library_background">#F7F8F5</color>
+    <color name="library_surface">#FFFFFF</color>
+    <color name="library_text">#202923</color>
+    <color name="library_muted">#707B73</color>
+    <color name="library_accent">#DCE9DF</color>
+    <color name="library_outline">#E2E7E1</color>
+</resources>

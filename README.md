@@ -5,104 +5,161 @@
   />
 </p>
 
+# Personal Library — V.2
 
-# Personal Library 
+A minimal personal book library for Android, built with Java and XML. Version 2 delivers the first functional application foundation, local book management, optional real-cover lookup, and English/Portuguese localization.
 
-An Android application built with Java and XML to organize your reading history, rate books, bookmark pages, and save personal notes.
+> **Project status:** Development build. The Android source and CI emulator smoke-test workflow are present on the `feature/android-app-foundation` branch. The emulator workflow has been configured but has not yet reported a completed run.
 
-> **Status:** In development. The features below describe the planned project scope.
+## Features
 
-## About the Project
+- Add, view, edit, search and delete books.
+- Store each book's title, author, ISBN, personal rating and notes.
+- Search by title, author or ISBN.
+- Retrieve real book covers through the Google Books API.
+- Search by ISBN when available, with title and author as a fallback.
+- Persist book records locally in JSON.
+- Use the interface in English or Portuguese, following the device language.
+- Browse saved book records offline.
 
-Personal Library is a personal reading journal for Android.
+Book records are stored in the app's private internal storage. Internet access is only needed for optional cover lookup and remote cover-image loading; a failed lookup does not prevent a book from being saved.
 
-It offers a simple way to browse your reading history, find books by author, and revisit notes and memorable passages.
-
-The app is designed for individual use, without requiring an account, an internet connection, or a database.
-
-## Planned Features
-
-- **Book entries:** Record each book's title and author.
-- **Reading list:** View all saved books.
-- **Editing and deletion:** Update book information or remove entries.
-- **Ratings:** Give each book a personal rating.
-- **Bookmarks:** Mark pages or passages to revisit later.
-- **Comments:** Save opinions, reflections, and notes about each book.
-- **Search:** Find books by title.
-- **Filters:** Filter books by author, rating, and whether they have bookmarks.
-- **Local persistence:** Keep entries available after closing and reopening the app.
-
-## Technologies
+## Technology
 
 | Technology | Purpose |
 | --- | --- |
-| Java | Application logic and data models |
-| Android SDK | Android platform features and components |
-| XML | Screen layouts |
-| JSON | Planned format for storing entries in local files |
-| Android Studio | Development environment |
-| Gradle | Build automation and dependency management |
+| Java 17 | Application logic and data model |
+| XML | Android layouts and localized resources |
+| Android SDK 36 | Android platform and build target |
+| Android Gradle Plugin 8.13.2 | Android build configuration |
+| Gradle 8.13 | Build automation |
+| Google Books API | Optional book-cover lookup |
+| Picasso 2.8 | Remote cover-image loading |
+| JSON | Local book-record persistence |
 
-## Storage and Offline Access
+The application does not require an account, backend, remote database or cloud synchronization.
 
-Book entries, ratings, bookmarks, and comments will be saved as JSON files in the app's internal storage.
+## Project structure
 
-The project will not use SQLite, Room, Firebase, or other databases.
+```text
+Personal-Library-Android/
+├── .github/
+│   └── workflows/
+│       └── android-emulator.yml
+├── app/
+│   ├── build.gradle
+│   └── src/main/
+│       ├── java/com/lzaklp/personallibrary/
+│       │   ├── MainActivity.java
+│       │   ├── Book.java
+│       │   ├── BookAdapter.java
+│       │   └── BookStorage.java
+│       ├── res/
+│       │   ├── layout/
+│       │   ├── drawable/
+│       │   ├── values/
+│       │   └── values-en/
+│       └── AndroidManifest.xml
+├── build.gradle
+├── settings.gradle
+└── gradle.properties
+```
 
-The app is designed to work entirely offline:
+## Requirements
 
-- No account or login required.
-- No server connection required.
-- No synchronization between devices.
+- Android Studio with support for Android Gradle Plugin 8.13.2.
+- JDK 17.
+- Android SDK Platform 36.
+- An Android emulator or physical Android device (minimum Android 6.0 / API 23).
+- Internet access only if you want to retrieve or load online book covers.
 
-> **Storage limitation:** Local files may be removed when clearing app data or uninstalling the app. Export and backup features are outside the initial scope.
+## Installation and execution
 
-## Getting Started
+### Option 1 — Android Studio
 
-The instructions below apply once the Android project is available in this repository.
+1. Clone the repository:
 
-### Prerequisites
+   ```bash
+   git clone https://github.com/lzakLP/Personal-Library-Android.git
+   ```
 
-- Android Studio compatible with the project's configuration.
-- The Android SDK required by the project.
-- An Android emulator or a physical device with USB debugging enabled.
+2. Open the project directory in Android Studio.
+3. Switch to the development branch:
 
-### Running the App
+   ```bash
+   git checkout feature/android-app-foundation
+   ```
 
-1. Clone this repository or download its contents.
-2. Open the project folder in Android Studio.
-3. Wait for Gradle synchronization to finish.
-4. Install any SDK components requested by Android Studio.
-5. Start an emulator or connect an Android device.
-6. Select the target device.
-7. Click **Run ▶** to build and launch the app.
+4. Configure JDK 17 in Android Studio if it is not already selected.
+5. Install Android SDK Platform 36 through **Tools → SDK Manager** if required.
+6. Wait for Gradle synchronization to finish and allow Android Studio to download the dependencies.
+7. Start an emulator or connect a physical device with USB debugging enabled.
+8. Select the `app` run configuration and click **Run**.
 
-> The minimum Android version and specific build requirements will be documented after the initial project setup.
+### Option 2 — Command line
 
-## 🗺️ Development Roadmap
+The project currently does not include a Gradle Wrapper. Install Gradle 8.13 and configure the Android SDK, then run the following commands from the repository root:
 
-- [ ] Set up the Android project with Java and XML layouts.
-- [ ] Create the book data model.
-- [ ] Implement book creation and listing.
-- [ ] Add a book details screen.
-- [ ] Implement editing and deletion.
-- [ ] Add ratings and comments.
-- [ ] Add page and passage bookmarks.
-- [ ] Implement search and filters.
-- [ ] Save and load entries using JSON files.
-- [ ] Verify offline functionality and data persistence.
-- [ ] Review the interface and usability.
-- [ ] Add screenshots and a demo GIF.
-- [ ] Complete setup instructions and project documentation.
+```bash
+gradle --version
+gradle assembleDebug
+```
 
-## Initial Scope
+To install the generated debug APK on a running emulator or connected device:
 
-The first version focuses on recording and browsing personal reading history.
+```bash
+adb install -r app/build/outputs/apk/debug/app-debug.apk
+adb shell am start -n com.lzaklp.personallibrary/.MainActivity
+```
 
-The following features are outside the initial scope:
+## Data and privacy
 
-- Social networking and public profiles.
-- Book lending management.
-- External book catalogs.
-- Cloud synchronization.
-- Data export and backup.
+- Book records are saved in `personal_library.json` inside the application's private internal storage.
+- Records remain available after normal application restarts.
+- Clearing application data or uninstalling the app removes locally stored records.
+- No account, server-side user database or synchronization service is used.
+- Google Books requests are optional and are used to find cover images; they are not required for basic library management.
+
+## Version 2 updates
+
+- Established the native Android project structure using Java and XML.
+- Added the book data model and local JSON storage layer.
+- Implemented book creation, listing, details, editing and deletion.
+- Added search by title, author and ISBN.
+- Added personal ratings and notes.
+- Added optional Google Books cover lookup and Picasso image loading.
+- Added Portuguese and English string resources.
+- Preserved the existing project banner image from the original README.
+- Added a GitHub Actions workflow for an Android debug build and emulator launch smoke test.
+
+## Simulated environment test — CI emulator smoke test
+
+A GitHub Actions workflow is included at `.github/workflows/android-emulator.yml`. It is configured to run on pushes to `feature/android-app-foundation`, pull requests targeting `main`, and manual workflow dispatch.
+
+The planned CI sequence is:
+
+1. Check out the repository source.
+2. Set up JDK 17, Gradle 8.13 and the Android SDK.
+3. Build the debug APK with `gradle assembleDebug`.
+4. Start an Android Emulator using the Pixel 2 profile, x86_64 image and API level 35 with Google APIs.
+5. Install the generated APK using `adb install`.
+6. Launch `com.lzaklp.personallibrary/.MainActivity`.
+7. Check that the application process is running using `adb shell pidof`.
+
+**Execution status:** This is a configured automated smoke-test scenario, not a passed test report. At the time this README was updated, GitHub Actions had returned no workflow runs for the repository. Therefore, the build, installation, launch and process check have not yet been confirmed in a running emulator. No claim of successful emulator testing is being made.
+
+## Known limitations and improvement opportunities
+
+1. **Android edge-to-edge and system insets:** Review window insets and safe content padding for Android 15 and 16, particularly with target SDK 36.
+2. **Search empty state:** Improve the empty-state messaging so an empty library is clearly distinguished from a search that returns no matches.
+3. **Persistence error handling:** Handle and report storage failures consistently for deletion and asynchronous cover updates, as well as book creation and editing.
+4. **Automated test coverage:** Add unit tests for the book model and JSON storage, plus instrumentation tests for creating, editing, searching, deleting and restoring books after an application restart.
+5. **Network and image failure cases:** Test Google Books timeouts, unavailable results, malformed responses, offline mode and image-loading failures.
+6. **Android version coverage:** Run build and UI checks across representative API levels, including API 23 or 26, API 31, API 35 and API 36.
+7. **Gradle Wrapper:** Add the official Gradle Wrapper so developers and CI use a consistent Gradle version without requiring a separate global installation.
+8. **Backup and export:** Consider a user-controlled export/import feature to protect locally stored book records.
+
+---
+
+**Development branch:** `feature/android-app-foundation`  
+**Default branch:** `main` (not modified as part of this update).
