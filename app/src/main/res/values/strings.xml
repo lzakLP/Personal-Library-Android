@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">Biblioteca Pessoal</string>
+    <string name="brand_label">BIBLIOTECA PESSOAL</string>
     <string name="library_title">Minha biblioteca</string>
     <string name="library_subtitle">Sua vida de leitura em um só lugar.</string>
+    <string name="library_card_caption">Histórias e ideias reunidas</string>
+    <string name="book_label">LIVRO</string>
+    <string name="recently_added">ADICIONADOS RECENTEMENTE</string>
+    <string name="empty_state_title">Nenhum livro ainda</string>
     <string name="search_hint">Buscar por título, autor ou ISBN</string>
     <string name="empty_library_title">Sua biblioteca está esperando</string>
     <string name="empty_library_message">Adicione seu primeiro livro para começar seu diário de leitura.</string>
