@@ -111,19 +111,20 @@ public class MainActivity extends AppCompatActivity {
                     Book updated = new Book(title, author, Math.round(ratingInput.getRating()),
                             notes, isbn, existing == null ? "" : existing.getCoverUrl());
                     int oldIndex = existing == null ? -1 : indexOfBook(existing.getId());
-                    if (oldIndex >= 0) allBooks.set(oldIndex, updatedWithId(existing, updated));
-                    else allBooks.add(0, updated);
+                    Book savedBook = oldIndex >= 0 ? updatedWithId(existing, updated) : updated;
+                    if (oldIndex >= 0) allBooks.set(oldIndex, savedBook);
+                    else allBooks.add(0, savedBook);
 
                     if (!storage.saveBooks(allBooks)) {
                         if (oldIndex >= 0) allBooks.set(oldIndex, existing);
-                        else allBooks.remove(updated);
+                        else allBooks.remove(savedBook);
                         Toast.makeText(this, R.string.save_error, Toast.LENGTH_LONG).show();
                         return;
                     }
                     searchInput.setText("");
                     refreshBooks();
                     dialog.dismiss();
-                    lookupCover(updated.getId(), updated.getTitle(), updated.getAuthor(), isbn);
+                    lookupCover(savedBook.getId(), savedBook.getTitle(), savedBook.getAuthor(), isbn);
                 }));
         dialog.show();
     }
