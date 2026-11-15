@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PERSONAL LIBRARY"
+            android:text="@string/brand_label"
             android:textColor="@color/library_primary"
             android:textSize="11sp"
             android:letterSpacing="0.16"
@@ -67,7 +67,7 @@
                         android:id="@+id/bookCountText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0 books"
+                        android:text="0"
                         android:textColor="@color/library_text"
                         android:textSize="25sp"
                         android:textStyle="bold" />
@@ -76,7 +76,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:text="Collected stories and ideas"
+                        android:text="@string/library_card_caption"
                         android:textColor="@color/library_muted"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -84,12 +84,12 @@
                 <TextView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
+                    android:background="@drawable/book_icon_background"
                     android:gravity="center"
-                    android:text="BOOK"
+                    android:text="@string/book_label"
                     android:textColor="@color/library_primary"
                     android:textSize="10sp"
-                    android:textStyle="bold"
-                    android:background="@drawable/book_icon_background" />
+                    android:textStyle="bold" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -123,7 +123,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="22dp"
             android:layout_marginBottom="10dp"
-            android:text="RECENTLY ADDED"
+            android:text="@string/recently_added"
             android:textColor="@color/library_muted"
             android:textSize="11sp"
             android:letterSpacing="0.12"
@@ -153,7 +153,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No books yet"
+                    android:text="@string/empty_state_title"
                     android:textColor="@color/library_text"
                     android:textSize="20sp"
                     android:textStyle="bold" />
