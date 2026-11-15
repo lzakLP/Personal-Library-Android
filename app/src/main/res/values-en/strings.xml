@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">Personal Library</string>
+    <string name="brand_label">PERSONAL LIBRARY</string>
     <string name="library_title">My library</string>
     <string name="library_subtitle">Your reading life, in one place.</string>
+    <string name="library_card_caption">Collected stories and ideas</string>
+    <string name="book_label">BOOK</string>
+    <string name="recently_added">RECENTLY ADDED</string>
+    <string name="empty_state_title">No books yet</string>
     <string name="search_hint">Search by title, author or ISBN</string>
     <string name="empty_library_title">Your library is waiting</string>
     <string name="empty_library_message">Add your first book to start building your reading journal.</string>
