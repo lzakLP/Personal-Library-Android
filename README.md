@@ -1,103 +1,97 @@
 <p align="center">
   <img
     src="https://i.pinimg.com/736x/85/21/49/852149a7474d13fd6d363575d58fecee.jpg"
+    alt="Personal Library project artwork"
     width="680"
   />
 </p>
 
+# Personal Library
 
-# Personal Library 
+An Android application concept for organizing reading history, rating books, bookmarking pages, and saving personal notes.
 
-An Android application built with Java and XML to organize your reading history, rate books, bookmark pages, and save personal notes.
+> **Project status:** In development. The repository currently contains project documentation and configuration files only. The Android application source code and Gradle project have not yet been committed, so the app cannot currently be built or launched from this repository.
 
-> **Status:** In development. The features below describe the planned project scope.
+## Project overview
 
-## About the Project
+Personal Library is intended to work as a personal reading journal.
 
-Personal Library is a personal reading journal for Android.
+The planned experience focuses on recording books, reviewing reading progress, and keeping notes and memorable passages in one place.
 
-It offers a simple way to browse your reading history, find books by author, and revisit notes and memorable passages.
+The initial concept is an offline-first application for individual use, without account creation or a remote service.
 
-The app is designed for individual use, without requiring an account, an internet connection, or a database.
+## Planned features
 
-## Planned Features
-
-- **Book entries:** Record each book's title and author.
-- **Reading list:** View all saved books.
-- **Editing and deletion:** Update book information or remove entries.
-- **Ratings:** Give each book a personal rating.
-- **Bookmarks:** Mark pages or passages to revisit later.
-- **Comments:** Save opinions, reflections, and notes about each book.
+- **Book records:** Save each book's title and author.
+- **Reading list:** Browse saved books.
+- **Editing and deletion:** Update or remove book records.
+- **Ratings:** Assign a personal rating to each book.
+- **Bookmarks:** Save page numbers or passages for later reference.
+- **Notes:** Record opinions, reflections, and comments.
 - **Search:** Find books by title.
-- **Filters:** Filter books by author, rating, and whether they have bookmarks.
-- **Local persistence:** Keep entries available after closing and reopening the app.
+- **Filters:** Filter by author, rating, and bookmark status.
+- **Local persistence:** Keep records available after closing and reopening the app.
 
-## Technologies
+## Proposed technology stack
 
-| Technology | Purpose |
+| Technology | Intended purpose |
 | --- | --- |
 | Java | Application logic and data models |
-| Android SDK | Android platform features and components |
+| Android SDK | Android platform and application components |
 | XML | Screen layouts |
-| JSON | Planned format for storing entries in local files |
+| JSON | Local data storage |
 | Android Studio | Development environment |
-| Gradle | Build automation and dependency management |
+| Gradle | Build automation |
 
-## Storage and Offline Access
+These technologies describe the planned implementation, not a currently buildable application.
 
-Book entries, ratings, bookmarks, and comments will be saved as JSON files in the app's internal storage.
+## Storage and offline behavior
 
-The project will not use SQLite, Room, Firebase, or other databases.
+The current design proposes storing book entries, ratings, bookmarks, and notes as JSON files in the app's internal storage.
 
-The app is designed to work entirely offline:
+The intended application will:
 
-- No account or login required.
-- No server connection required.
-- No synchronization between devices.
+- Work without an internet connection.
+- Require no account or login.
+- Store data locally on the device.
+- Avoid cloud synchronization in the initial scope.
 
-> **Storage limitation:** Local files may be removed when clearing app data or uninstalling the app. Export and backup features are outside the initial scope.
+Local data may be removed if the app's data is cleared or the application is uninstalled. Export and backup functionality are not part of the initial scope.
 
-## Getting Started
+## Development roadmap
 
-The instructions below apply once the Android project is available in this repository.
-
-### Prerequisites
-
-- Android Studio compatible with the project's configuration.
-- The Android SDK required by the project.
-- An Android emulator or a physical device with USB debugging enabled.
-
-### Running the App
-
-1. Clone this repository or download its contents.
-2. Open the project folder in Android Studio.
-3. Wait for Gradle synchronization to finish.
-4. Install any SDK components requested by Android Studio.
-5. Start an emulator or connect an Android device.
-6. Select the target device.
-7. Click **Run ▶** to build and launch the app.
-
-> The minimum Android version and specific build requirements will be documented after the initial project setup.
-
-## 🗺️ Development Roadmap
-
-- [ ] Set up the Android project with Java and XML layouts.
-- [ ] Create the book data model.
+- [ ] Create the Android Studio project using Java and XML.
+- [ ] Define the book data model.
 - [ ] Implement book creation and listing.
 - [ ] Add a book details screen.
 - [ ] Implement editing and deletion.
-- [ ] Add ratings and comments.
+- [ ] Add ratings and notes.
 - [ ] Add page and passage bookmarks.
 - [ ] Implement search and filters.
-- [ ] Save and load entries using JSON files.
-- [ ] Verify offline functionality and data persistence.
-- [ ] Review the interface and usability.
-- [ ] Add screenshots and a demo GIF.
-- [ ] Complete setup instructions and project documentation.
+- [ ] Implement JSON-based local persistence.
+- [ ] Verify offline behavior and data persistence.
+- [ ] Review interface usability.
+- [ ] Add screenshots and a demonstration.
+- [ ] Document build requirements and installation steps.
 
-## Initial Scope
+## Build and run
 
-The first version focuses on recording and browsing personal reading history.
+Build instructions will be added after the Android Studio project and source code are committed.
+
+Once available, the expected workflow will be:
+
+1. Clone the repository.
+2. Open the Android project in Android Studio.
+3. Install the SDK components required by the project.
+4. Wait for Gradle synchronization.
+5. Start an emulator or connect an Android device.
+6. Build and run the application.
+
+The minimum Android version and Gradle requirements have not yet been established.
+
+## Initial scope
+
+The first version is intended to focus on recording and browsing personal reading history.
 
 The following features are outside the initial scope:
 
